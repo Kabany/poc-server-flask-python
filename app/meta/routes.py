@@ -1,5 +1,3 @@
-from flask import request, jsonify, Response
-
 from app import success_response
 from app.meta import bp
 from config import Config

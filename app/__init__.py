@@ -6,8 +6,10 @@ def create_app(config_class=Config):
   app.config.from_object(config_class)
 
   from app.meta import bp as meta_bp
+  from app.operations import bp as operations_bp
 
   app.register_blueprint(meta_bp)
+  app.register_blueprint(operations_bp)
 
   return app
 
