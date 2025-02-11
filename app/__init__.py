@@ -7,9 +7,11 @@ def create_app(config_class=Config):
 
   from app.meta import bp as meta_bp
   from app.operations import bp as operations_bp
+  from app.auth import bp as auth_bp
 
   app.register_blueprint(meta_bp)
   app.register_blueprint(operations_bp)
+  app.register_blueprint(auth_bp)
 
   return app
 
