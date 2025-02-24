@@ -3,7 +3,7 @@ import pyotp
 import json
 import hashlib
 
-FIRST_JWT_SECRET = "ThisIsASuperSecret"
+FIRST_JWT_SECRET = "ThisIsAVeryLongStringToAlignWithTheIDX10720RequirementForDotNetWebApps"
 
 def create_jwt_from_string(text: str):
   key = jwk.JWK().from_password(FIRST_JWT_SECRET)

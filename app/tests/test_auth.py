@@ -20,7 +20,7 @@ class AuthTest(unittest.TestCase):
   def test_should_create_jwt_token_from_simple_string(self):
     message = "Hello World!"
     token = create_jwt_from_string(message)
-    self.assertEqual("eyJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.kiLVWiCroYBS-sgSmTP_u74OmiLt_l3UeUBGfM-lmE8", token)
+    self.assertEqual("eyJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.yX3llK_oxmp-qhJ7l-B0AL8wOlzCzsDHlw7xtCU2d4s", token)
 
   def test_should_create_jwt_token_then_decode_it(self):
     message = "Hello World!"
@@ -28,11 +28,11 @@ class AuthTest(unittest.TestCase):
     decoded = validate_jwt_token(token)
     self.assertEqual(message, decoded)
 
-    # From JS
-    decoded2 = validate_jwt_token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.IuiP9G4uZRbreQi4qWaZFlZMnvEtHig0AmYx-8NT7Q4")
+    # From JavaScript, C# & Java/Kotlin
+    decoded2 = validate_jwt_token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.q_OAmeTO_BJ0X1_6SMzGEat8qHvcMZ6LtPhLg8yKXR4")
     self.assertEqual(message, decoded2)
     # From Swift
-    decoded3 = validate_jwt_token("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.mahh4kwbMrH_-7Np_G88KLJmkW5GtFYzbLiWAfpRiJQ")
+    decoded3 = validate_jwt_token("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.Qn62lWxZ5VZKovUbE8KTu_xGeDSp739uapAuBDK360Y")
     self.assertEqual(message, decoded3)
 
   def test_should_create_hash_using_sha512(self):
